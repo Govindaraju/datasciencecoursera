@@ -54,4 +54,6 @@ run_analysis <- function(){
   final.data <- required.data[,lapply(.SD,mean), by= list(actvity,subject)]
   
   final.data
+  
+  write.table(final.data,"tidydata.txt",row.names=F)
 }
