@@ -7,7 +7,7 @@ Make a tidy data using the script run_analysis.R
   * Read the measurements data, which has 561 column data representing various measurements from the files **X_test.txt** and **Y_test.txt**
   * Read **561 column** names pertaining to various measurements from the file features.txt
   * set the columns to the test and train data sets.
-   * Read different activities performed by the participants namely "WALKING", "WALKING UPSTAIRS", "WALKING DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
+  * Read different activities performed by the participants namely "WALKING", "WALKING UPSTAIRS", "WALKING DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
   * Replace activity denoted by numbers 1 to 6 with their respective name
      + 1 WALKING
      + 2 WALKING-UPSTAIRS
