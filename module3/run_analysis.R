@@ -26,6 +26,7 @@ run_analysis <- function(){
   test.activity$V1 <- mapvalues(test.activity$V1,c(1,2,3,4,5,6),c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"))
   train.activity$V1 <- mapvalues(train.activity$V1,c(1,2,3,4,5,6),c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"))
   
+  
   # Convert test.main and train.main as data tables so that operations on them are easy and quick
   test.main  <- setDT(test.main)
   train.main <- setDT(train.main)
@@ -52,8 +53,6 @@ run_analysis <- function(){
   
   #Compute the mean of all the columns grouped by activity and subject
   final.data <- required.data[,lapply(.SD,mean), by= list(subject,activity)][order(subject,activity)]
-  
-  final.data
   
   write.table(final.data,"tidydata.txt",row.names=F); final.data
 }
