@@ -44,8 +44,8 @@ run_analysis <- function(){
   #Shortlist the required columns
   allcols <- colnames(total.main);
   index <- length(allcols)
-  col.meanstd.slist <- grep("mean|std",allcols,value=T)
-  col.short.list <- c(col.meanstd.slist,allcols[(index-2):index])
+  col.meanstd.slist <- grep("mean\\(\\)|std\\(\\)",allcols,value=T)
+  col.short.list <- c(col.meanstd.slist,allcols[(index-1):index])
   
   #Extract all rows corresponding to the required columns 
   required.data <- total.main[,col.short.list,with=FALSE]
@@ -55,5 +55,5 @@ run_analysis <- function(){
   
   final.data
   
-  write.table(final.data,"tidydata.txt",row.names=F)
+  write.table(final.data,"tidydata.txt",row.names=F); final.data
 }
