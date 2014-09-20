@@ -2,11 +2,11 @@ require(data.table)
 require(plyr)
 run_analysis <- function(){
   
-  # read subject data indicating the person whose activities are recorded
+  # Read subject data indicating the person whose activities are recorded
   test.subject <- read.table("./test/subject_test.txt",header=F)
   train.subject <- read.table("./train/subject_train.txt",header=F)
   
-  # read different activities performed by the participants namely
+  # Read different activities performed by the participants namely
   # "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
   test.activity <- read.table("./test/y_test.txt",header=F)
   train.activity <- read.table("./train/y_train.txt",header=F)
@@ -35,8 +35,8 @@ run_analysis <- function(){
   train.main[,subject := train.subject]
   
   #Make activities as one of the columns
-  test.main[,actvity := test.activity$V1]
-  train.main[,actvity := train.activity$V1]
+  test.main[,activity := test.activity$V1]
+  train.main[,activity := train.activity$V1]
   
   #Merge train and test data tables
   total.main <- rbind(train.main,test.main)
@@ -51,7 +51,7 @@ run_analysis <- function(){
   required.data <- total.main[,col.short.list,with=FALSE]
   
   #Compute the mean of all the columns grouped by activity and subject
-  final.data <- required.data[,lapply(.SD,mean), by= list(actvity,subject)]
+  final.data <- required.data[,lapply(.SD,mean), by= list(subject,activity)][order(subject,activity)]
   
   final.data
   
