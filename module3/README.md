@@ -2,9 +2,9 @@ Make a tidy data using the script run_analysis.R
 ------------------------------------------------------------------------------------
 
 ###How the script is made:
-  * The script depends on **data.table** and **pylr** packages.
-  * Read subject data indicating the person whose activities are recorded
-  * Read the measurements data, which has 561 column data representing various measurements from the files **X_test.txt** and **Y_test.txt**
+  * The script depends on **data.table** and **pylr** packages.Also please ensure the required data files are made available in the desired directory and format under the working directory.
+  * Read the subject data indicating the person whose activities are recorded
+  * Read the measurements data, which has 561 column data representing various measurements recorded, from the files **X_test.txt** and **Y_test.txt**
   * Read **561 column** names pertaining to various measurements from the file features.txt
   * set the columns to the test and train data sets.
   * Read different activities performed by the participants namely "WALKING", "WALKING UPSTAIRS", "WALKING DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
