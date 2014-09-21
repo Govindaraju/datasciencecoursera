@@ -1,0 +1,118 @@
+															Tidy Data Set
+															=============
+
+=======================================
+References	
+=======================================
+
+1. X_test.txt 			- 561 measurements  data performed by subject categorised as test group.
+2. subject_test.txt		- subjects belonged to the test group - who performed the activities.
+3. y_test.txt			- activities performed by the subjects belonged to the test group.
+4. X_train.txt			- 561 measurements  data performed by subject categorised as train group.
+5. subject_train.txt	- subjects belonged to the train group - who performed the activities.
+6. y_train.txt			- activities performed by the subjects belonged to the train group. 
+7. features_info.txt	- basic information about how various measurements  are arrived at and classified.
+8. features.txt			- names of 561 measurements  recorded/calculated.
+
+													Tidy data set characteristics
+												====================================
+
+Base - the big consolidated dataset
+===================================
+The consolidated data collated and merged from the above listed files, make a big dataset of 10299 records, with 563 columns.
+
+Test data records  count 							= 2947
+Train data records count 							= 7352
+Various measurements  observed/produced 			= 561
+Total columns in the big data set 					= 563
+Additional columns added to the dataset
+	- SUBJECT  - indicating the people who performed the activities
+	- Activity - different activities performed by the subject.
+
+Tidy dataset the final dataset
+==============================
+	Columns
+		The big dataset is grouped by subject and activities, considering only the mean() and std() measurements , with subject and activity added as additional columns. 68 columns in total.
+	Rows
+		30 different subjects and 6  different activities accounting for 180 rows.
+
+Tidydata.txt - has 180 rows of 68 columns.
+
+List of Columns [68 columns]
+============================
+
+				subject      				-	SUBJECT who performed the activity
+				activity					- 	Various activities performed
+				
+For the below columns please refer the features.txt and features_info.txt to get some background. In the tidy dataset, they are grouped by the subject who performed an activity and the performed activity.
+				
+				tBodyAcc-mean()-Z                     
+				tGravityAcc-mean()-X              
+				tGravityAcc-std()-Y               
+				tBodyAccJerk-mean()-Z             
+				tBodyGyro-mean()-X                
+				tBodyGyro-std()-Y                 
+				tBodyGyroJerk-mean()-Z            
+				tBodyAccMag-mean()"                
+				tBodyAccJerkMag-mean()"            
+				tBodyGyroJerkMag-mean()"           
+				fBodyAcc-mean()-Z                 
+				fBodyAccJerk-mean()-X             
+				fBodyAccJerk-std()-Y              
+				fBodyGyro-mean()-Z                
+				fBodyAccMag-mean()"                
+				fBodyBodyGyroMag-mean()"           
+				tBodyAcc-std()-X       
+				tGravityAcc-mean()-Y   
+				tGravityAcc-std()-Z    
+				tBodyAccJerk-std()-X   
+				tBodyGyro-mean()-Y     
+				tBodyGyro-std()-Z      
+				tBodyGyroJerk-std()-X  
+				tBodyAccMag-std()"      
+				tBodyAccJerkMag-std()"  
+				tBodyGyroJerkMag-std()" 
+				fBodyAcc-std()-X       
+				fBodyAccJerk-mean()-Y  
+				fBodyAccJerk-std()-Z   
+				fBodyGyro-std()-X      
+				fBodyAccMag-std()"      
+				fBodyBodyGyroMag-std()" 
+				tBodyAcc-mean()-X          
+				tBodyAcc-std()-Y           
+				tGravityAcc-mean()-Z       
+				tBodyAccJerk-mean()-X      
+				tBodyAccJerk-std()-Y       
+				tBodyGyro-mean()-Z         
+				tBodyGyroJerk-mean()-X     
+				tBodyGyroJerk-std()-Y      
+				tGravityAccMag-mean()"      
+				tBodyGyroMag-mean()"        
+				fBodyAcc-mean()-X          
+				fBodyAcc-std()-Y           
+				fBodyAccJerk-mean()-Z      
+				fBodyGyro-mean()-X         
+				fBodyGyro-std()-Y          
+				fBodyBodyAccJerkMag-mean()" 
+				fBodyBodyGyroJerkMag-mean()"
+				tGravityAcc-std()-X        
+				tBodyAccJerk-mean()-Y      
+				tBodyAccJerk-std()-Z       
+				tBodyGyro-std()-X          
+				tBodyGyroJerk-mean()-Y     
+				tBodyGyroJerk-std()-Z      
+				tGravityAccMag-std()"       
+				tBodyGyroMag-std()"         
+				fBodyAcc-mean()-Y          
+				fBodyAcc-std()-Z           
+				fBodyAccJerk-std()-X       
+				fBodyGyro-mean()-Y         
+				fBodyGyro-std()-Z          
+				fBodyBodyAccJerkMag-std()"  
+				fBodyBodyGyroJerkMag-std()" 
+				tBodyAcc-mean()-Y    
+				tBodyAcc-std()-Z     
+Glossary
+==========
+	SUBJECT 	: Persons who performed various activities, they are uniquely identified between 1 and 30
+	Activity	: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
